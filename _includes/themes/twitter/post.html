@@ -8,9 +8,27 @@
       <span>{{ page.date | date_to_long_string }}</span>
     </div>
     <div class="content">
-      {{ content }}
-    </div>
-
+	    {{ content }}
+	    <br>
+	    <!--This Button BEGIN -->
+	    <div class="jiathis_style">
+		    <span class="jiathis_txt"><b>ShareTo:</b></span>
+		   	<a class="jiathis_button_tsina"></a>
+		       	<a class="jiathis_button_renren"></a>
+			<a class="jiathis_button_weixin"></a>
+			<a class="jiathis_button_douban"></a>
+			<a class="jiathis_button_qzone"></a>
+			<a class="jiathis_button_fb"></a>
+			<a class="jiathis_button_linkedin"></a>
+			<a class="jiathis_button_twitter"></a>
+			<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+			<a class="jiathis_counter_style"></a>
+		</div>
+		<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+		<!-- JiaThis Button END -->	
+	</div>
+	<br/>
+	<br>
   {% unless page.categories == empty %}
     <ul class="tag_box inline">
       <li><i class="icon-folder-open"></i></li>

@@ -10,5 +10,5 @@ http://Octavianus.github.io/pages.html
 http://Octavianus.github.io/sitemap.txt
 http://Octavianus.github.io/tags.html
 
-http://Octavianus.github.io/thought/2013/12/22/%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%86%99%E5%8D%9A%E5%AE%A2
+http://Octavianus.github.io/thought/2013/12/22/%E4%B8%BA%E4%BD%95%E6%8A%95%E8%BA%AB%E7%8B%AC%E7%AB%8B%E5%8D%9A%E5%AE%A2
 http://Octavianus.github.io/technology/2013/12/21/How-To
