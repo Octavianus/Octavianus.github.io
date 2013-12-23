@@ -4,6 +4,7 @@ http://Octavianus.github.io/index.html
 http://Octavianus.github.io/about.html
 http://Octavianus.github.io/atom.xml
 http://Octavianus.github.io/rss.xml
+http://Octavianus.github.io/message.html
 http://Octavianus.github.io/categories.html
 http://Octavianus.github.io/pages.html
 http://Octavianus.github.io/sitemap.txt

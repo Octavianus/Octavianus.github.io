@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Topic about
-tagline: technology thought target
+title: Topic About
+tagline: -- Technology & Thought 
 ---
 {% include JB/setup %}
 
@@ -10,6 +10,8 @@ tagline: technology thought target
 <ul class="posts">
   {% for post in site.posts %}
     <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></li>
-  {% endfor %}
+{{ post.content | strip_html | truncatewords:57}}
+<a href="{{ post.url }}">Read more</a>
+{% endfor %}
 </ul>
 <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
