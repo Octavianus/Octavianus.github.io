@@ -4,7 +4,7 @@
  <title>farmosteast</title>
  <link href="http://Octavianus.github.io/" rel="self"/>
  <link href="http://Octavianus.github.io"/>
- <updated>2013-12-22T19:56:39-08:00</updated>
+ <updated>2013-12-22T22:23:20-08:00</updated>
  <id>http://Octavianus.github.io</id>
  <author>
    <name>David</name>
@@ -14,17 +14,17 @@
  
  <entry>
    <title>为什么要写博客</title>
-   <link href="http://Octavianus.github.io/tought/2013/12/22/%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%86%99%E5%8D%9A%E5%AE%A2"/>
+   <link href="http://Octavianus.github.io/thought/2013/12/22/%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%86%99%E5%8D%9A%E5%AE%A2"/>
    <updated>2013-12-22T00:00:00-08:00</updated>
-   <id>http://Octavianus.github.io/tought/2013/12/22/为什么要写博客</id>
+   <id>http://Octavianus.github.io/thought/2013/12/22/为什么要写博客</id>
    <content type="html"></content>
  </entry>
  
  <entry>
    <title>How To</title>
-   <link href="http://Octavianus.github.io/tought/2013/12/21/How-To"/>
+   <link href="http://Octavianus.github.io/technology/2013/12/21/How-To"/>
    <updated>2013-12-21T00:00:00-08:00</updated>
-   <id>http://Octavianus.github.io/tought/2013/12/21/How-To</id>
+   <id>http://Octavianus.github.io/technology/2013/12/21/How-To</id>
    <content type="html">&lt;p&gt;This Jekyll introduction will outline specifically what Jekyll is and why you would want to use it. Directly following the intro we’ll learn exactly &lt;em&gt;how&lt;/em&gt; Jekyll does what it does.&lt;/p&gt;
 
 &lt;h2 id=&quot;overview&quot;&gt;Overview&lt;/h2&gt;
