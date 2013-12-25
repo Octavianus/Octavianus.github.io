@@ -4,13 +4,55 @@
  <title>farmosteast</title>
  <link href="http://Octavianus.github.io/" rel="self"/>
  <link href="http://Octavianus.github.io"/>
- <updated>2013-12-24T02:09:32-08:00</updated>
+ <updated>2013-12-25T14:50:06-08:00</updated>
  <id>http://Octavianus.github.io</id>
  <author>
    <name>David</name>
    <email>weng@email.arizona.edu</email>
  </author>
 
+ 
+ <entry>
+   <title>Shortest Path And Flow Network Problem</title>
+   <link href="http://Octavianus.github.io/technology/2013/12/25/Shortest-Path-and-Flow-Network-Problem"/>
+   <updated>2013-12-25T00:00:00-08:00</updated>
+   <id>http://Octavianus.github.io/technology/2013/12/25/Shortest-Path-and-Flow-Network-Problem</id>
+   <content type="html">&lt;p&gt;w Network problem&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Ford-Fulkerson&lt;/li&gt;
+
+&lt;li&gt;Edmonds karp&lt;/li&gt;
+
+&lt;li&gt;Minimum Cut Maximum method&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;shortest_path_problem&quot;&gt;Shortest Path problem.&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Floyd-Warshll&lt;/li&gt;
+
+&lt;li&gt;Dijkstra&lt;/li&gt;
+
+&lt;li&gt;Breadth First Search&lt;/li&gt;
+
+&lt;li&gt;Bellman-Ford&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;other_graph_theory_problem&quot;&gt;Other graph theory problem&lt;/h4&gt;
+
+&lt;p&gt;These problem can be solved by building up a Integer Linear Proggraming model, set up a goal function, and assume all the variables which obey the capacity constraint and flow conservation. At last minimize goal function.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Minimum edage cover &lt;strong&gt;&lt;em&gt;(use ILP)&lt;/em&gt;&lt;/strong&gt;&lt;/li&gt;
+
+&lt;li&gt;Minimum vertex cover &lt;strong&gt;&lt;em&gt;(use ILP Approximation method)&lt;/em&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;LP formulation Assume that every vertex has an associated cost of c(v)\geq 0. The (weighted) minimum vertex cover problem can be formulated as the following integer linear program (ILP).&lt;/p&gt;
+
+&lt;p&gt;This ILP belongs to the more general class of ILPs for covering problems. The integrality gap of this ILP is 2, so its relaxation gives a factor-2 approximation algorithm for the minimum vertex cover problem. Furthermore, the linear programming relaxation of that ILP is half-integral, that is, there exists an optimal solution for which each entry x_v is either 0, 1/2, or 1.&lt;/p&gt;</content>
+ </entry>
  
  <entry>
    <title>Connect Lg Hbs 730 To Laptop</title>
