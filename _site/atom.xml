@@ -4,7 +4,7 @@
  <title>farmosteast</title>
  <link href="http://Octavianus.github.io/" rel="self"/>
  <link href="http://Octavianus.github.io"/>
- <updated>2013-12-25T19:57:11-08:00</updated>
+ <updated>2013-12-25T20:14:49-08:00</updated>
  <id>http://Octavianus.github.io</id>
  <author>
    <name>David</name>
@@ -72,16 +72,22 @@
 &lt;p&gt;内存访问越界：&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;（a）在搜索字符串时，依靠字符串结束符来判断字符串是否结束，但是字符串没有正常的使用结束符。&lt;/li&gt;
+&lt;li&gt;(a) 在搜索字符串时，依靠字符串结束符来判断字符串是否结束，但是字符串没有正常的使用结束符。&lt;/li&gt;
 
 &lt;li&gt;(b) 最常见的要数使用strcpy, strcat, sprintf, strcmp, strcasecmp等字符串操作函数，将目标字符串读/写爆。应该使用strncpy, strlcpy, strncat, strlcat, snprintf, strncmp, strncasecmp等函数防止读写越界。 可是很多人偷懒，疲于仔细计算每一个分配的空间需要的字节数，或者计算错误导致越界&lt;/li&gt;
 
-&lt;li&gt;(c)另外要说明的是memcpy更是一个重灾区,详细内容会在后面说。&lt;/li&gt;
+&lt;li&gt;(c) 另外要说明的是memcpy更是一个重灾区,详细内容会在后面说。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 
 &lt;li&gt;
-&lt;p&gt;非法指针： a) 使用空指针 b) 随意使用指针转换。一个指向一段内存的指针，除非确定这段内存原先就分配为某种结构或类型，或者这种结构或类型的数组，否则不要将它转换为这种结构或类型 的指针，而应该将这段内存拷贝到一个这种结构或类型中，再访问这个结构或类型。这是因为如果这段内存的开始地址不是按照这种结构或类型对齐的，那么访问它 时就很容易因为bus error而core dump.&lt;/p&gt;
+&lt;p&gt;非法指针：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;(a) 使用空指针&lt;/li&gt;
+
+&lt;li&gt;(b) 随意使用指针转换。一个指向一段内存的指针，除非确定这段内存原先就分配为某种结构或类型，或者这种结构或类型的数组，否则不要将它转换为这种结构或类型 的指针，而应该将这段内存拷贝到一个这种结构或类型中，再访问这个结构或类型。这是因为如果这段内存的开始地址不是按照这种结构或类型对齐的，那么访问它 时就很容易因为bus error而core dump.&lt;/li&gt;
+&lt;/ul&gt;
 &lt;/li&gt;
 
 &lt;li&gt;
