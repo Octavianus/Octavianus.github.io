@@ -141,26 +141,30 @@
       <span>25 December 2013</span>
     </div>
     <div class="content">
-	    <p>w Network problem</p>
+	    <h4 id="flow_network_problem">FLow Network problem</h4>
+
+<p>This is all the algorithm and method that can find the maximum flow in the flow network problem with different complexity in space and time.</p>
 
 <ul>
-<li>Ford-Fulkerson</li>
+<li>Ford-Fulkerson (Time complexity based on how many augmenting path it has.)</li>
 
-<li>Edmonds karp</li>
+<li>Edmonds karp ( O(VE^2) in time)</li>
 
 <li>Minimum Cut Maximum method</li>
 </ul>
 
 <h4 id="shortest_path_problem">Shortest Path problem.</h4>
 
+<p>This is all the algorithm and method that can find the shortest path in a graph with different complexity in space and time.</p>
+
 <ul>
-<li>Floyd-Warshll</li>
+<li>Floyd-Warshll (O(V^3) in time, compute the distance of all the postible pairs of path, can reconstruct the path after modifying the algorithm)</li>
 
-<li>Dijkstra</li>
+<li>Dijkstra ( Greedy Algo, time complexity is depended on the data structure which stores the the vertex such as binary heap, skiplist, MST, Fabonacci heap or array, BST etc.)</li>
 
-<li>Breadth First Search</li>
+<li>Breadth First Search ( O(V+E) in tiem, undirect graph)</li>
 
-<li>Bellman-Ford</li>
+<li>Bellman-Ford ( O(VE) in time specified for negtive-weight or negtive circles )</li>
 </ul>
 
 <h4 id="other_graph_theory_problem">Other graph theory problem</h4>
@@ -173,7 +177,7 @@
 <li>Minimum vertex cover <strong><em>(use ILP Approximation method)</em></strong></li>
 </ul>
 
-<p>LP formulation Assume that every vertex has an associated cost of c(v)\geq 0. The (weighted) minimum vertex cover problem can be formulated as the following integer linear program (ILP).</p>
+<p>LP formulation Assume that every vertex has an associated cost of c(v)&gt;= 0. The (weighted) minimum vertex cover problem can be formulated as the following integer linear program (ILP).</p>
 
 <p>This ILP belongs to the more general class of ILPs for covering problems. The integrality gap of this ILP is 2, so its relaxation gives a factor-2 approximation algorithm for the minimum vertex cover problem. Furthermore, the linear programming relaxation of that ILP is half-integral, that is, there exists an optimal solution for which each entry x_v is either 0, 1/2, or 1.</p>
 	    <br>
@@ -206,7 +210,7 @@
   
      
     	<li><a href="/categories.html#technology-ref">
-    		technology <span>3</span>
+    		technology <span>4</span>
     	</a></li>
     
   
@@ -226,7 +230,7 @@
      
     	<li><a href="/tags.html#Algorithm-ref">Algorithm <span>1</span></a></li>
      
-    	<li><a href="/tags.html#Technology-ref">Technology <span>3</span></a></li>
+    	<li><a href="/tags.html#Technology-ref">Technology <span>4</span></a></li>
     
   
 
@@ -239,7 +243,7 @@
     <div class="pagination">
       <ul>
       
-        <li class="prev"><a href="/technology/2013/12/24/Connect-LG-HBS-730-to-Laptop" title="Connect Lg Hbs 730 To Laptop">&larr; Previous</a></li>
+        <li class="prev"><a href="/technology/2013/12/25/Debug-the-file-system" title="Debug The File System">&larr; Previous</a></li>
       
         <li><a href="/archive.html">Archive</a></li>
       
