@@ -4,13 +4,451 @@
  <title>farmosteast</title>
  <link href="http://Octavianus.github.io/" rel="self"/>
  <link href="http://Octavianus.github.io"/>
- <updated>2013-12-25T20:14:49-08:00</updated>
+ <updated>2013-12-29T20:45:52-08:00</updated>
  <id>http://Octavianus.github.io</id>
  <author>
    <name>David</name>
    <email>weng@email.arizona.edu</email>
  </author>
 
+ 
+ <entry>
+   <title>Preparing For The Interview</title>
+   <link href="http://Octavianus.github.io/technology/2013/12/29/Preparing-For-The-Interview"/>
+   <updated>2013-12-29T00:00:00-08:00</updated>
+   <id>http://Octavianus.github.io/technology/2013/12/29/Preparing-For-The-Interview</id>
+   <content type="html">&lt;h1 id=&quot;cracking_the_coding_interview&quot;&gt;Cracking the Coding Interview:&lt;/h1&gt;
+
+&lt;p&gt;CC使用方法，每道题思考30分钟左右如果没有头绪就看答案，推敲，然后在纸上和电脑里实现。每次两道题。每天2-3次（放假时）。 平时周末一次即可。 ICC,GCC,OPT,Ph.D.&lt;/p&gt;
+
+&lt;h1 id=&quot;leetcode&quot;&gt;leetcode:&lt;/h1&gt;
+
+&lt;p&gt;参考答案：&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/iphkwan/leetcode&quot;&gt;https://github.com/iphkwan/leetcode&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/fanfank/leetcode&quot;&gt;https://github.com/fanfank/leetcode&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;&quot;&gt;面试题按照难度分类&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;(第一行是题目，难度，频率；第二行是数据结构，算法)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Id Question Difficulty Freqency Data Structures Algorithms&lt;/p&gt;
+
+&lt;p&gt;1 Two Sum 2 5 array set sort two pointers&lt;/p&gt;
+
+&lt;p&gt;2 Add Two Numbers 3 4 linked list two pointers math&lt;/p&gt;
+
+&lt;p&gt;3 Longest Substring Without Repeating Characters 3 2 string hashtable two pointers&lt;/p&gt;
+
+&lt;p&gt;4 Median of Two Sorted Arrays 5 3 array binary search&lt;/p&gt;
+
+&lt;p&gt;5 Longest Palindromic Substring 4 2 string&lt;/p&gt;
+
+&lt;p&gt;6 ZigZag Conversion 3 1 string&lt;/p&gt;
+
+&lt;p&gt;7 Reverse Integer 2 3 math&lt;/p&gt;
+
+&lt;p&gt;8 String to Integer (atoi) 2 5 string math&lt;/p&gt;
+
+&lt;p&gt;9 Palindrome Number 2 2 math 10 Regular Expression Matching 5 3 string recursion dp&lt;/p&gt;
+
+&lt;p&gt;11 Container With Most Water 3 2 array two pointers&lt;/p&gt;
+
+&lt;p&gt;12 Integer to Roman 3 4 math&lt;/p&gt;
+
+&lt;p&gt;13 Roman to Integer 2 4 math&lt;/p&gt;
+
+&lt;p&gt;14 Longest Common Prefix 2 1 string&lt;/p&gt;
+
+&lt;p&gt;15 3Sum 3 5 array two pointers&lt;/p&gt;
+
+&lt;p&gt;16 3Sum Closest 3 1 array two pointers&lt;/p&gt;
+
+&lt;p&gt;17 Letter Combinations of a Phone Number 3 3 string dfs&lt;/p&gt;
+
+&lt;p&gt;18 4Sum 3 2 array&lt;/p&gt;
+
+&lt;p&gt;19 Remove Nth Node From End of List 2 3 linked list two pointers&lt;/p&gt;
+
+&lt;p&gt;20 Valid Parentheses 2 5 string stack&lt;/p&gt;
+
+&lt;p&gt;21 Merge Two Sorted Lists 2 5 linked list sort two pointers merge&lt;/p&gt;
+
+&lt;p&gt;22 Generate Parentheses 3 4 string dfs&lt;/p&gt;
+
+&lt;p&gt;23 Merge k Sorted Lists 3 4 linked list heap sort two pointers merge&lt;/p&gt;
+
+&lt;p&gt;24 Swap Nodes in Pairs 2 4 linked list&lt;/p&gt;
+
+&lt;p&gt;25 Reverse Nodes in k-Group 4 2 linked list recursion two pointers&lt;/p&gt;
+
+&lt;p&gt;26 Remove Duplicates from Sorted Array 1 3 array two pointers&lt;/p&gt;
+
+&lt;p&gt;27 Remove Element 1 4 array two pointers&lt;/p&gt;
+
+&lt;p&gt;28 Implement strStr() 4 5 string two pointers KMP rolling hash&lt;/p&gt;
+
+&lt;p&gt;29 Divide Two Integers 4 3 binary search math&lt;/p&gt;
+
+&lt;p&gt;30 Substring with Concatenation of All Words 3 1 string two pointers&lt;/p&gt;
+
+&lt;p&gt;31 Next Permutation 5 2 array permutation&lt;/p&gt;
+
+&lt;p&gt;32 Longest Valid Parentheses 4 1 string dp&lt;/p&gt;
+
+&lt;p&gt;33 Search in Rotated Sorted Array 4 3 array binary search&lt;/p&gt;
+
+&lt;p&gt;34 Search for a Range 4 3 array binary search&lt;/p&gt;
+
+&lt;p&gt;35 Search Insert Position 2 2 array&lt;/p&gt;
+
+&lt;p&gt;36 Valid Sudoku 2 2 array&lt;/p&gt;
+
+&lt;p&gt;37 Sudoku Solver 4 2 array dfs&lt;/p&gt;
+
+&lt;p&gt;38 Count and Say 2 2 string two pointers&lt;/p&gt;
+
+&lt;p&gt;39 Combination Sum 3 3 array combination&lt;/p&gt;
+
+&lt;p&gt;40 Combination Sum II 4 2 array combination&lt;/p&gt;
+
+&lt;p&gt;41 First Missing Positive 5 2 array sort&lt;/p&gt;
+
+&lt;p&gt;42 Trapping Rain Water 4 2 array two pointers stack&lt;/p&gt;
+
+&lt;p&gt;43 Multiply Strings 4 3 string two pointers math&lt;/p&gt;
+
+&lt;p&gt;44 Wildcard Matching 5 3 string recursion dp greedy&lt;/p&gt;
+
+&lt;p&gt;45 Jump Game II 4 2 array&lt;/p&gt;
+
+&lt;p&gt;46 Permutations 3 4 array permutation&lt;/p&gt;
+
+&lt;p&gt;47 Permutations II 4 2 array permutation&lt;/p&gt;
+
+&lt;p&gt;48 Rotate Image 4 2 array&lt;/p&gt;
+
+&lt;p&gt;49 Anagrams 3 4 string hashtable&lt;/p&gt;
+
+&lt;p&gt;50 Pow(x, n) 3 5 binary search math&lt;/p&gt;
+
+&lt;p&gt;51 N-Queens 4 3 array dfs&lt;/p&gt;
+
+&lt;p&gt;52 N-Queens II 4 3 array dfs&lt;/p&gt;
+
+&lt;p&gt;53 Maximum Subarray 3 3 array dp&lt;/p&gt;
+
+&lt;p&gt;54 Spiral Matrix 4 2 array&lt;/p&gt;
+
+&lt;p&gt;55 Jump Game 3 2 array&lt;/p&gt;
+
+&lt;p&gt;56 Merge Intervals 4 5 array linked list red-black tree sort merge&lt;/p&gt;
+
+&lt;p&gt;57 Insert Interval 4 5 array linked list red-black tree sort merge&lt;/p&gt;
+
+&lt;p&gt;58 Length of Last Word 1 1 string&lt;/p&gt;
+
+&lt;p&gt;59 Spiral Matrix II 3 2 array&lt;/p&gt;
+
+&lt;p&gt;60 Permutation Sequence 5 1 permutation math&lt;/p&gt;
+
+&lt;p&gt;61 Rotate List 3 2 linked list two pointers&lt;/p&gt;
+
+&lt;p&gt;62 Unique Paths 2 3 array dp&lt;/p&gt;
+
+&lt;p&gt;63 Unique Paths II 3 3 array dp&lt;/p&gt;
+
+&lt;p&gt;64 Minimum Path Sum 3 3 array dp&lt;/p&gt;
+
+&lt;p&gt;65 Valid Number 2 5 string math&lt;/p&gt;
+
+&lt;p&gt;66 Plus One 1 2 array math&lt;/p&gt;
+
+&lt;p&gt;67 Add Binary 2 4 string two pointers math&lt;/p&gt;
+
+&lt;p&gt;68 Text Justification 4 2 string&lt;/p&gt;
+
+&lt;p&gt;69 Sqrt(x) 4 4 binary search&lt;/p&gt;
+
+&lt;p&gt;70 Climbing Stairs 2 5 dp&lt;/p&gt;
+
+&lt;p&gt;71 Simplify Path 3 1 string stack&lt;/p&gt;
+
+&lt;p&gt;72 Edit Distance 4 3 string dp&lt;/p&gt;
+
+&lt;p&gt;73 Set Matrix Zeroes 3 5 array&lt;/p&gt;
+
+&lt;p&gt;74 Search a 2D Matrix 3 3 array binary search&lt;/p&gt;
+
+&lt;p&gt;75 Sort Colors 4 2 array sort two pointers&lt;/p&gt;
+
+&lt;p&gt;76 Minimum Window Substring 4 2 string two pointers&lt;/p&gt;
+
+&lt;p&gt;77 Combinations 3 4 combination&lt;/p&gt;
+
+&lt;p&gt;78 Subsets 3 4 array recursion combination&lt;/p&gt;
+
+&lt;p&gt;79 Word Search 3 4 array dfs&lt;/p&gt;
+
+&lt;p&gt;80 Remove Duplicates from Sorted Array II 2 2 array two pointers&lt;/p&gt;
+
+&lt;p&gt;81 Search in Rotated Sorted Array II 5 3 array binary search&lt;/p&gt;
+
+&lt;p&gt;82 Remove Duplicates from Sorted List II 3 3 linked list recursion two pointers&lt;/p&gt;
+
+&lt;p&gt;83 Remove Duplicates from Sorted List 1 3 linked list&lt;/p&gt;
+
+&lt;p&gt;84 Largest Rectangle in Histogram 5 2 array stack&lt;/p&gt;
+
+&lt;p&gt;85 Maximal Rectangle 5 1 array dp stack&lt;/p&gt;
+
+&lt;p&gt;86 Partition List 3 3 linked list two pointers&lt;/p&gt;
+
+&lt;p&gt;87 Scramble String 5 2 string recursion dp&lt;/p&gt;
+
+&lt;p&gt;88 Merge Sorted Array 2 5 array two pointers merge&lt;/p&gt;
+
+&lt;p&gt;89 Gray Code 4 2 combination&lt;/p&gt;
+
+&lt;p&gt;90 Subsets II 4 2 array recursion combination&lt;/p&gt;
+
+&lt;p&gt;91 Decode Ways 3 4 string recursion dp&lt;/p&gt;
+
+&lt;p&gt;92 Reverse Linked List II 3 2 linked list two pointers&lt;/p&gt;
+
+&lt;p&gt;93 Restore IP Addresses 3 3 string dfs&lt;/p&gt;
+
+&lt;p&gt;94 Binary Tree Inorder Traversal 4 3 tree hashtable recursion morris stack&lt;/p&gt;
+
+&lt;p&gt;95 Unique Binary Search Trees II 4 1 tree dp dfs&lt;/p&gt;
+
+&lt;p&gt;96 Unique Binary Search Trees 3 1 tree dp&lt;/p&gt;
+
+&lt;p&gt;97 Interleaving String 5 2 string recursion dp&lt;/p&gt;
+
+&lt;p&gt;98 Validate Binary Search Tree 3 5 tree dfs&lt;/p&gt;
+
+&lt;p&gt;99 Recover Binary Search Tree 4 2 tree dfs&lt;/p&gt;
+
+&lt;p&gt;100 Same Tree 1 1 tree dfs&lt;/p&gt;
+
+&lt;p&gt;101 Symmetric Tree 1 2 tree dfs&lt;/p&gt;
+
+&lt;p&gt;102 Binary Tree Level Order Traversal 3 4 tree bfs&lt;/p&gt;
+
+&lt;p&gt;103 Binary Tree Zigzag Level Order Traversal 4 3 queue tree bfs stack&lt;/p&gt;
+
+&lt;p&gt;104 Maximum Depth of Binary Tree 1 1 tree dfs&lt;/p&gt;
+
+&lt;p&gt;105 Construct Binary Tree from Preorder and Inorder Tr 3 3 array tree dfs&lt;/p&gt;
+
+&lt;p&gt;106 Construct Binary Tree from Inorder and Postorder T 3 3 array tree dfs&lt;/p&gt;
+
+&lt;p&gt;107 Binary Tree Level Order Traversal II 3 1 tree bfs&lt;/p&gt;
+
+&lt;p&gt;108 Convert Sorted Array to Binary Search Tree 2 3 tree dfs&lt;/p&gt;
+
+&lt;p&gt;109 Convert Sorted List to Binary Search Tree 4 3 linked list recursion two pointers&lt;/p&gt;
+
+&lt;p&gt;110 Balanced Binary Tree 1 2 tree dfs&lt;/p&gt;
+
+&lt;p&gt;111 Minimum Depth of Binary Tree 1 1 tree dfs&lt;/p&gt;
+
+&lt;p&gt;112 Path Sum 1 3 tree dfs&lt;/p&gt;
+
+&lt;p&gt;113 Path Sum II 2 2 tree dfs&lt;/p&gt;
+
+&lt;p&gt;114 Flatten Binary Tree to Linked List 3 3 tree recursion stack&lt;/p&gt;
+
+&lt;p&gt;115 Distinct Subsequences 4 2 string dp&lt;/p&gt;
+
+&lt;p&gt;116 Populating Next Right Pointers in Each Node 3 3 tree dfs&lt;/p&gt;
+
+&lt;p&gt;117 Populating Next Right Pointers in Each Node II 4 2 tree dfs&lt;/p&gt;
+
+&lt;p&gt;118 Pascal’s Triangle 2 1 array&lt;/p&gt;
+
+&lt;p&gt;119 Pascal’s Triangle II 2 1 array&lt;/p&gt;
+
+&lt;p&gt;120 Triangle 3 1 array dp&lt;/p&gt;
+
+&lt;p&gt;121 Best Time to Buy and Sell Stock 2 1 array dp&lt;/p&gt;
+
+&lt;p&gt;122 Best Time to Buy and Sell Stock II 3 1 array greedy&lt;/p&gt;
+
+&lt;p&gt;123 Best Time to Buy and Sell Stock III 4 1 array dp&lt;/p&gt;
+
+&lt;p&gt;124 Binary Tree Maximum Path Sum 4 2 tree dfs&lt;/p&gt;
+
+&lt;p&gt;125 Valid Palindrome 2 5 string two pointers&lt;/p&gt;
+
+&lt;p&gt;126 Word Ladder II 1 1&lt;/p&gt;
+
+&lt;p&gt;127 Word Ladder 3 5 graph bfs shortest path&lt;/p&gt;
+
+&lt;p&gt;128 Longest Consecutive Sequence 4 3 array&lt;/p&gt;
+
+&lt;p&gt;129 Sum Root to Leaf Numbers 2 4 tree dfs&lt;/p&gt;
+
+&lt;p&gt;130 Surrounded Regions 4 3 array bfs dfs&lt;/p&gt;
+
+&lt;p&gt;131 Palindrome Partitioning 3 4 string dfs&lt;/p&gt;
+
+&lt;p&gt;132 Palindrome Partitioning II 4 3 string dp&lt;/p&gt;
+
+&lt;h2 id=&quot;_2&quot;&gt;面试题按照数据结构分类&lt;/h2&gt;
+
+&lt;h3 id=&quot;dynamic_programming&quot;&gt;Dynamic Programming&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;Edit Distance
+Maximum Subarray
+Minimum Path Sum
+Unique Paths
+Unique Paths II
+Longest Palindromic Substring
+Interleaving String
+Triangle
+Distinct Subsequences
+Decode Ways
+Palindrome Partitioning II
+Maximal Rectangle&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;recursion&quot;&gt;Recursion&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;N-Queens
+N-Queens II
+Balanced Binary Tree
+Binary Tree Inorder Traversal
+Binary Tree Maximum Path Sum
+Convert Sorted Array to Binary Search Tree
+Convert Sorted List to Binary Search Tree
+Flatten Binary Tree to Linked List
+Maximum Depth of Binary Tree
+Minimum Depth of Binary Tree
+Path Sum
+Permutations
+Permutations II
+Populating Next Right Pointers in Each Node
+Pow(x, n)
+Same Tree
+Subsets
+Sum Root to Leaf Numbers
+Swap Nodes in Pairs
+Symmetric Tree
+Valid Palindrome
+Validate Binary Search Tree
+Restore IP Addresses
+Combinations
+Interleaving String (dp is the best)
+Combination Sum II
+Letter Combinations of a Phone Numbers
+Word Search
+Construct Binary Tree from Inorder and Postorder Traversal
+Construct Binary Tree from Preorder and Inorder Traversal
+Generate Parentheses
+Surrounded Regions (runtime error)
+Palindrome Partitioning
+Combination Sum
+Sudoku Solver
+Unique Binary Search Trees II&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;binary_search&quot;&gt;Binary Search&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;Search Insert Position
+Search a 2D Matrix
+Search for a Range
+Search in Rotated Sorted Array
+Sqrt(x)&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;sequence&quot;&gt;Sequence&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;Container With Most Water
+Count and Say
+First Missing Positive
+Implement strStr()
+Jump Game
+Jump Game II
+Length of Last Word
+Longest Common Prefix
+Longest Substring Without Repeating Characters
+Merge Sorted Array
+Palindrome Number
+Plus One
+Remove Duplicates from Sorted Array
+Remove Duplicates from Sorted Array II
+Remove Element
+Reverse Integer
+Search in Rotated Sorted Array II
+Sort Colors
+Two Sum
+3Sum
+3Sum Closest
+4Sum
+Add Binary
+Longest Palindromic Substring
+Next Permutation
+Longest Valid Parentheses
+Climbing Stairs
+Permutation Sequence
+Simplify Path
+String to Integer (atoi)
+Minimum Window Substring
+Longest Consecutive Sequence
+Trapping Rain Water
+Valid Number&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;linked_list&quot;&gt;Linked List&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;Add Two Numbers
+Convert Sorted List to Binary Search Tree
+Merge Two Sorted Lists
+Partition List
+Remove Duplicates from Sorted List
+Remove Duplicates from Sorted List II
+Remove Nth Node From End of List
+Reverse Linked List II
+Reverse Nodes in k-Group
+Rotate List
+Swap Nodes in Pairs&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;stack&quot;&gt;Stack&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;Binary Tree Inorder Traversal
+Binary Tree Level Order Traversal II
+Valid Parentheses&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;queue&quot;&gt;Queue&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;Binary Tree Level Order Traversal
+Binary Tree Level Order Traversal II
+Populating Next Right Pointers in Each Node II
+Symmetric Tree
+Surrounded Regions
+Word Ladder&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;tree&quot;&gt;Tree&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;Balanced Binary Tree
+Binary Tree Inorder Traversal
+Binary Tree Level Order Traversal
+Binary Tree Level Order Traversal II
+Binary Tree Maximum Path Sum
+Convert Sorted Array to Binary Search Tree
+Convert Sorted List to Binary Search Tree
+Flatten Binary Tree to Linked List
+Maximum Depth of Binary Tree
+Minimum Depth of Binary Tree
+Path Sum
+Same Tree
+Sum Root to Leaf Numbers
+Symmetric Tree
+Validate Binary Search Tree&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;Reference:&lt;/code&gt; Coffee-Coder: Leetcode 题目分类 http://blog.csdn.net/fightforyourdream/article/details/12705509&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;Reference:&lt;/code&gt; Author: peking2 Source: http://leetcode.cloudfoundry.com/&lt;/p&gt;</content>
+ </entry>
  
  <entry>
    <title>Shortest Path And Flow Network Problem</title>
