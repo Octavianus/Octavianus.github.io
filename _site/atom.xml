@@ -4,7 +4,7 @@
  <title>farmosteast</title>
  <link href="http://Octavianus.github.io/" rel="self"/>
  <link href="http://Octavianus.github.io"/>
- <updated>2014-01-14T14:34:01-08:00</updated>
+ <updated>2014-01-14T16:42:33-08:00</updated>
  <id>http://Octavianus.github.io</id>
  <author>
    <name>David</name>
@@ -19,7 +19,7 @@
    <id>http://Octavianus.github.io/thought/2014/01/13/写给自己的2014展望</id>
    <content type="html">&lt;p&gt;2014年已经来了，你一无所有地将自己袒露在巨大的未知面前。别再同自己谈论告别，你要的不是告别，你明白有些事情无法回头，你需要的是建设全新生活的勇气。&lt;/p&gt;
 &lt;hr /&gt;
-&lt;p&gt;&lt;strong&gt;1.重新拾起web开发的技术和编程语言。&lt;/strong&gt;因为种种复杂的原因，第一学期的GPA成绩不佳，这样的处境让我四处需找突破口，经过一番努力，我似乎领会了些什么：GPA不如好手艺，好好提升实战能力比较来的稳妥。第一学期掌握了最基础的系统开发，在linux下用c编写文件系统。 下一步我打算接触web开发，如果条件成熟，再去尝试转移到移动平台。在这方面我并不是一个新手，在大一大二的时候，探索阶段的我接触过的能和web开发沾上边的从dreamweaver开始，然后再到HTML+CSS+photoshop切图的时代， 再到PHP, javascript, ASP.Net. 但是这些只是做到了HELLO WORLD的程度，最后真正动手开发的是一个javascript的网页小游戏，过段时间我打算不知在我的博客里。 第二个project是以jsp + tomcat + MySQL为基本配置的BBS论坛系统（也尝试布置在博客里）。按照规律，接下来应该掌握的是DOM, JSON, AJAX, JQuery, &lt;a href=&quot;http://prototypejs.org/&quot;&gt;prototypejs&lt;/a&gt;. 当然需要继续巩固之前的基础，毕竟都有好些年没有 在运用过了。不过这次，不能是在蜻蜓点水，你要持续和深入的学习。这方面我有一个人可以请教，就是我校在校PHD，RA &lt;a href=&quot;http://yoursunny.cn/m/&quot;&gt;石君霄&lt;/a&gt;，此人从2000年就开始开始web开发&lt;a href=&quot;http://yoursunny.com/t/2009/my-webdev-timeline/&quot;&gt;(他的网站开发经历)&lt;/a&gt;，技术从最基本的HTML + FrontPage已经鸟枪换炮好几代了。 我积攒了许多的问题打算下学期我们都选了的一门课上问他，比如如何能够在自己的网站投放广告，网页服务如何和SMS通信，他认为最好的开发框架和技术什么，需不需要做好分层设计等等。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;1.重新拾起web开发的技术和编程语言。&lt;/strong&gt;因为种种复杂的原因，第一学期的GPA成绩不佳，这样的处境让我四处需找突破口，经过一番努力，我似乎领会了些什么：GPA不如好手艺，好好提升实战能力比较来的稳妥。第一学期掌握了最基础的系统开发，在linux下用c编写文件系统。 下一步我打算接触web开发，如果条件成熟，再去尝试转移到移动平台。在这方面我并不是一个新手，在大一大二的时候，探索阶段的我接触过的能和web开发沾上边的从dreamweaver开始，然后再到HTML+CSS+photoshop切图的时代， 再到PHP, javascript, ASP.Net. 但是这些只是做到了HELLO WORLD的程度，最后真正动手开发的是一个javascript的网页小游戏，过段时间我打算布置在我的博客里。 第二个project是以jsp + tomcat + MySQL为基本配置的BBS论坛系统（也尝试布置在博客里）。按照规律，接下来应该掌握的是DOM, JSON, AJAX, JQuery, &lt;a href=&quot;http://prototypejs.org/&quot;&gt;prototypejs&lt;/a&gt;. 当然需要继续巩固之前的基础，毕竟都有好些年没有 在运用过了。不过这次，不能是在蜻蜓点水，你要持续和深入的学习。这方面我有一个人可以请教，就是我校在校PHD，RA &lt;a href=&quot;http://yoursunny.cn/m/&quot;&gt;石君霄&lt;/a&gt;，此人从2000年就开始开始web开发&lt;a href=&quot;http://yoursunny.com/t/2009/my-webdev-timeline/&quot;&gt;(他的网站开发经历)&lt;/a&gt;，技术从最基本的HTML + FrontPage已经鸟枪换炮好几代了。 我积攒了许多的问题打算下学期我们都选了的一门课上问他，比如如何能够在自己的网站投放广告，网页服务如何和SMS通信，他认为最好的开发框架和技术什么，需不需要做好分层设计等等。&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;2.精通一门OOP。&lt;/strong&gt;当然java这种OOP的王者（指的使用人数的角度）可以考虑修一门本科的课，时间大概在研二上学期找full-time job之前。 课程名 &lt;a href=&quot;http://www.cs.arizona.edu/classes/cs335/spring11/&quot;&gt;Object-Oriented Programming and Design&lt;/a&gt; 但是同时我也在犹豫C++，比较我层级啃下了OO的精髓就是考C++入门经典最艰难的那几章，继承，多态，泛型等等。 基础是有的，感情也是有的，听过一句比较野蛮的分类，如果你是一个狂热的编程爱好者就选择C++，如果你只为了找到一份工作就用Java。 这样的话我估计不属于前者。&lt;/p&gt;
 
