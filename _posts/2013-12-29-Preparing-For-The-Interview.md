@@ -10,7 +10,6 @@ tags : [Interview, Algorithm]
 
 CC使用方法，每道题思考30分钟左右如果没有头绪就看答案，推敲，然后在纸上和电脑里实现。每次两道题。每天2-3次（放假时）。
 平时周末一次即可。
-ICC,GCC,OPT,Ph.D.
 
 #leetcode:
 

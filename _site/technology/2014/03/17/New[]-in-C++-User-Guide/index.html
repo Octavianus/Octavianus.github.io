@@ -1,0 +1,597 @@
+
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <meta charset="utf-8">
+    <title>New[] In C++ User Guide</title>
+    
+    <meta name="author" content="David">
+
+    <!-- Enable responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="/assets/themes/twitter/bootstrap/css/bootstrap.2.2.2.min.css" rel="stylesheet">
+    <link href="/assets/themes/twitter/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+
+    <!-- Le fav and touch icons -->
+  <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  -->
+
+    <!-- atom & rss feed -->
+    <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+    <link href="/rss.xml" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+
+  </head>
+
+  <body>
+    <div class="navbar">
+      <div class="navbar-inner">
+        <div class="container-narrow">
+          <a class="brand" href="/">farmosteast</a>
+          <ul class="nav">
+		  <!-- Automaticly generate the navbar but wrong order
+		    
+		  
+      		  
+
+
+  
+    
+      
+      	
+      	<li><a href="/archive.html">Archive</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/about.html">About</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/message.html">Message</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/categories.html">Categories</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/pages.html">Pages</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/tags.html">Tags</a></li>
+      	
+      
+    
+  
+
+
+
+		  -->
+
+		  <!-- hardcode -->
+		  <li><a href="/archive.html">Archive</a></li>
+		  <li><a href="/categories.html">Categories</a></li>
+		  <li><a href="/tags.html">Tags</a></li>
+		  <li><a href="/pages.html">Pages</a></li>
+		  <li><a href="/message.html">Message</a></li>
+		  <li><a href="/about.html">About</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-narrow">
+
+      <div class="content">
+        
+<div class="page-header">
+  <h1>New[] In C++ User Guide <small></small></h1>
+</div>
+
+<div class="row-fluid post-full">
+  <div class="span12">
+    <div class="date">
+      <span>17 March 2014</span>
+    </div>
+    <div class="content">
+	    <p>编写面向对象的程序，经常需要使用到new和delete操作为对象申请内存空间并且初始化。在我博客的另一篇文章 <a href="http://octavianus.github.io/technology/2013/12/25/Debug-the-file-system/">Debug The File System</a> 我提到内存的分配和回收是开发中最令人头疼的事情，一旦出现内存的重叠分配或者访问越界等问题都是很难察觉到的，到时候出现段错误也需要花费大量的时间检查和排除错误。</p>
+
+<p>在C编程中，程序员只需要谨慎仔细的使用malloc和free(虽然这样也不容易)，C++在C的基础上，添加了强大的new功能，不仅可以分配内存，同时还可以为对象初始化，因此，更多的灵活性带来了更多的使用技巧。以我最近做的DBMS term project为例，对于对象内存的分配和回收这一部分而言，使用最频繁的要算是 <strong>Buffer Manager</strong> (以下简称<code>BM</code>)这一层了，这一层主要的功能是在heap file层申请Insert, Update，delete等等各种操作请求时，由于每一项操作设计一个虚拟的Page概念，BM会根据这些操作对应的Page，把其从外部存储设备(disk, flash)中读取到内存池(buffer pool)中，或者从内存池写到外部存储设备上。所以这其中涉及到了大量的内存分配和释放，看似new和delelte能为我们处理一切，可是不同的使用模式效率也会不同。首先有必要了解new的基本使用方法，我认为核心内容是关于placement new.内容转自百度sytarchen的空间和博客园的wanghetao.</p>
+<hr />
+<h3 id="_new">一. New的用法</h3>
+
+<p><strong>1. new( )</strong> 分配这种类型的一个大小的内存空间,并以括号中的值来初始化这个变量;</p>
+
+<p><strong>2. new[]</strong> 分配这种类型的n个大小的内存空间,并用默认构造函数来初始化这些变量;</p>
+
+<p>例子：</p>
+
+<pre class="c"><code class="c">
+#include&lt;iostream&gt;
+#include&lt;cstring&gt;
+using namespace std;
+int main(){   
+    char * p=new char(&quot;Hello&quot;);
+    //error分配一个char(1字节)的空间,                                  
+    //用&quot;Hello&quot;来初始化,这明显不对  
+     
+    char* p=new char[6];   
+    //p=&quot;Hello&quot;;                
+    //不能将字符串直接赋值给该字符指针p，原因是：                                
+    //指针p指向的是字符串的第一个字符，只能用下面的                                
+    //strcpy   
+    strcpy(p,&quot;Hello&quot;);   
+    cout&lt;&lt;*p&lt;&lt;endl;              //只是输出p指向的字符串的第一个字符！   
+    cout&lt;&lt;p&lt;&lt;endl;               //输出p指向的字符串！   
+    delete[] p;  
+     return 0;
+}
+</code></pre>
+
+<p><strong>3．开辟单变量地址空间</strong></p>
+
+<pre><code>1)new int;  //开辟一个存放数组的存储空间,返回一个指向该存储空间的地址.int *a = new int 即为将一个int类型的地址赋值给整型指针a. 
+
+2)int \*a = new int(5) 作用同上,但是同时将整数赋值为5</code></pre>
+
+<p><strong>4．开辟数组空间</strong></p>
+
+<pre><code>一维: int \*a = new int[100];开辟一个大小为100的整型数组空间
+
+二维: int \*\*a = new int[5][6]
+
+三维及其以上:依此类推.</code></pre>
+
+<p>一般用法: new 类型 [初值]</p>
+
+<p><strong>5.</strong>当使用new运算符定义一个多维数组变量或数组对象时，它产生一个指向数组第一个元素的指针，返回的类型保持了除最左边维数外的所有维数。</p>
+
+<p>例如：</p>
+
+<pre class="c"><code class="c">
+int *p1 = new int[10];   
+</code></pre>
+
+<p>返回的是一个指向int的指针int*</p>
+
+<pre class="c"><code class="c">
+int (*p2)[10] = new int[2][10];  
+</code></pre>
+
+<p>new了一个二维数组,去掉最左边那一维[2],剩下int[10],所以返回的是一个指向int[10]这种一维数组的指针int (*)[10].</p>
+
+<pre class="c"><code class="c">
+int (*p3)[2][10] = new int[5][2][10]; 
+</code></pre>
+
+<p>new了一个三维数组,去掉最左边那一维[5],还有int[2][10],所以返回的是一个指向二维数组int[2][10]这种类型的指针int (*)[2][10].</p>
+
+<p><strong>例子：</strong></p>
+
+<pre class="c"><code class="c">
+#include &lt;iostream&gt;
+#include &lt;typeinfo&gt;
+using namespace std;
+int main() {
+    int *a = new int[34];
+    int *b = new int[];
+    int (*c)[2] = new int[34][2];
+    int (*d)[2] = new int[][2];
+    int (*e)[2][3] = new int[34][2][3];
+    int (*f)[2][3] = new int[][2][3];
+    a[0] = 1;
+    b[0] = 1; //运行时错误,无分配的内存,b只起指针的作用,用来指向相应的数据
+    c[0][0] = 1;
+    d[0][0] = 1;  //运行时错误,无分配的内存,d只起指针的作用,用来指向相应的数据
+    e[0][0][0] = 1;
+    f[0][0][0] = 1;   //运行时错误,无分配的内存,f只起指针的作用,用来指向相应的数据
+    cout&lt;&lt;typeid(a).name()&lt;&lt;endl;
+    cout&lt;&lt;typeid(b).name()&lt;&lt;endl;
+    cout&lt;&lt;typeid(c).name()&lt;&lt;endl;
+    cout&lt;&lt;typeid(d).name()&lt;&lt;endl;
+    cout&lt;&lt;typeid(e).name()&lt;&lt;endl;
+    cout&lt;&lt;typeid(f).name()&lt;&lt;endl;
+    delete[] a; delete[] b; delete[] c;
+    delete[] d; delete[] e; delete[] f;
+}
+</code></pre>
+
+<p>输出结果：</p>
+
+<pre class="c"><code class="c">
+int *
+int *
+int (*)[2]
+int (*)[2]
+int (*)[2][3]
+int (*)[2][3]
+</code></pre>
+
+<p><strong>6．new运算符</strong></p>
+
+<p>最常用的是作为运算符的new，比如：</p>
+
+<pre class="c"><code class="c">
+string *str = new string(“test new”);
+</code></pre>
+
+<p>作为运算符，<code>new和sizeof一样，是C++内置的，你不能对它做任何的改变，除了使用它。</code> new会在堆上分配一块内存，并会自动调用类的构造函数。</p>
+
+<p><strong>7．new函数</strong></p>
+
+<p>第二种就是new函数，其实new运算符内部分配内存使用的就是new函数，原型是：</p>
+
+<pre class="c"><code class="c">
+void *operator new(size_t size);
+</code></pre>
+
+<p>new函数返回的是一个void指针，一块未经初始化的内存。如你所见，这和C语言的malloc行为相似，你可以重载new函数，并且增加额外的参数，但是必须保证第一个参数必须是size_t类型，它指明了分配内存块的大小，C++允许你这么做，当然一般情况下这是不必要的。如果重载了new函数，在使用new操作符时调用的就是你重载后的new函数了。 如果使用new函数，和语句</p>
+
+<pre class="c"><code class="c">
+string *str = new string(“test new”)
+</code></pre>
+
+<p>相对的代码大概是如下的样子：</p>
+
+<pre class="c"><code class="c">
+string *str = (string*)operator new(sizeof(string));  
+str.string(“test new”);   
+// 当然这个调用时非法的，但是编译器是没有这个限制的
+</code></pre>
+
+<h3 id="8placement_new">8.placement new</h3>
+
+<h4 id="1_placement_new">1. placement new的含义</h4>
+
+<p>placement new 是重载operator new 的一个标准、全局的版本，它不能够被自定义的版本代替（不像普通版本的operator new 和 operator delete能够被替换）。</p>
+
+<pre class="c"><code class="c">
+void *operator new( size_t, void *p ) throw()     { return p; }
+</code></pre>
+
+<p>placement new的执行忽略了size_t参数，只返还第二个参数。其结果是允许用户把一个对象放到一个特定的地方，达到调用构造函数的效果。</p>
+
+<p>和其他普通的new不同的是，它在括号里多了另外一个参数。比如：</p>
+
+<pre class="c"><code class="c">
+Widget * p = new Widget; - - - - - - - - - //ordinary new 
+pi = new (ptr) int; pi = new (ptr) int;     //placement new
+</code></pre>
+
+<p>括号里的参数ptr是一个指针，它指向一个内存缓冲器，placement new将在这个缓冲器上分配一个对象。Placement new的返回值是这个被构造对象的地址(比如括号中的传递参数)。placement new主要适用于：在对时间要求非常高的应用程序中，因为这些程序分配的时间是确定的；长时间运行而不被打断的程序；以及执行一个垃圾收集器 (garbage collector)。</p>
+
+<h4 id="2_new_operator_new__placement_new_">2. new 、operator new 和 placement new 区别</h4>
+
+<ul>
+<li>
+<p><strong>new</strong>：不能被重载，其行为总是一致的。它先调用operator new分配内存，然后调用构造函数初始化那段内存。</p>
+</li>
+
+<li>
+<p><strong>operator new</strong>：要实现不同的内存分配行为，应该重载operator new，而不是new。</p>
+</li>
+
+<li>
+<p>delete和operator delete类似。</p>
+</li>
+
+<li>
+<p>delete首先调用对象的析构函数，然后调用operator delete释放掉所使用的内存。</p>
+</li>
+
+<li>
+<p><strong>placement new</strong>：只是operator new重载的一个版本。它并不分配内存，只是返回指向已经分配好的某段内存的一个指针。因此不能删除它，但需要调用对象的析构函数。</p>
+</li>
+</ul>
+
+<h4 id="3_new_">3. new 操作符的执行过程</h4>
+
+<pre><code>　　(1). 调用operator new分配内存 ；
+　　(2). 调用构造函数生成类对象；
+　　(3). 返回相应指针。</code></pre>
+
+<p>operator new 就像operator+一样，是可以重载的。如果类中没有重载operator new，那么调用的就是全局的::operator new来完成堆的分配。同理，operator new[]、operator delete、operator delete[]也是可以重载的，其实 operator new也是operator new的一个重载的版本，只是很少用而已。如果你想在已经分配的内存中创建一个对象，使用new时行不通 的。也就是说placement new允许你在一个已经分配好的内存中（栈或者堆中）构造一个新的对象。原型中void*p实际上就是指向一个已经分配 好的内存缓冲区的的首地址。</p>
+
+<h4 id="4_placement_new_">4. Placement new 存在的理由</h4>
+
+<ol>
+<li>
+<p><strong>用Placement new 解决buffer的问题</strong> 问题描述：用new分配的数组缓冲时，由于调用了默认构造函数，因此执行效率上不佳。若没有默认构造函数则会发生编译时错误。如果你想在预分配的内存上创建对象，用缺省的new操作符是行不通的。要解决这个问题，你可以用placement new构造。它允许你构造一个新对象到预分配的内存上。</p>
+</li>
+
+<li>
+<p><strong>增大时空效率的问题</strong> 使用new操作符分配内存需要在堆中查找足够大的剩余空间，显然这个操作速度是很慢的，而且有可能出现无法分配内存的异常（空间不够）。 placement new 就可以解决这个问题。我们构造对象都是在一个预先准备好了的内存缓冲区中进行，不需要查找内存，内存分配的时间是常数；而且不会出现在程序运行中途出现内存不足的异常。所以，placement new非常适合那些对时间要求比较高，长时间运行不希望被打断的应用程序。</p>
+</li>
+</ol>
+
+<h4 id="5_">5. 使用步骤</h4>
+
+<p>在很多情况下，placement new的使用方法和其他普通的new有所不同。这里提供了它的使用步骤。</p>
+
+<h6 id="_">第一步 缓存提前分配</h6>
+
+<p>有三种方式：</p>
+
+<pre><code>1.为了保证通过placement new使用的缓存区的memory alignmen(内存队列)正确准备，使用普通的new来分配它：在堆上进行分配
+
+class Task ;
+
+char \* buff = new [sizeof(Task)]; //分配内存
+
+(请注意auto或者static内存并非都正确地为每一个对象类型排列，所以，你将不能以placement new使用它们。)
+
+2.在栈上进行分配
+
+class Task ;
+char buf[N\*sizeof(Task)]; //分配内存
+
+3.还有一种方式，就是直接通过地址来使用。(必须是有意义的地址)
+
+void* buf = reinterpret_cast&lt;void*&gt; (0xF00F);</code></pre>
+
+<h6 id="">第二步：对象的分配</h6>
+
+<p>在刚才已分配的缓存区调用placement new来构造一个对象。</p>
+
+<pre><code>Task *ptask = new (buf) Task</code></pre>
+
+<h6 id="_2">第三步：使用</h6>
+
+<p>按照普通方式使用分配的对象：</p>
+
+<pre><code>ptask-&gt;memberfunction();
+
+ptask-&gt; member; //...</code></pre>
+
+<h6 id="_3">第四步：对象的析构</h6>
+
+<p>一旦你使用完这个对象，你必须调用它的析构函数来毁灭它。按照下面的方式调用析构函数：</p>
+
+<pre><code>ptask-&gt;~Task(); //调用外在的析构函数</code></pre>
+
+<h6 id="_4">第五步：释放</h6>
+
+<p>你可以反复利用缓存并给它分配一个新的对象（重复步骤2，3，4）如果你不打算再次使用这个缓存，你可以象这样释放它：</p>
+
+<pre><code>delete [] buf;</code></pre>
+
+<p>跳过任何步骤就可能导致运行时间的崩溃，内存泄露，以及其它的意想不到的情况。如果你确实需要使用placement new，请认真遵循以上的步骤。</p>
+
+<h4 id="6_example_operator_new">6. Example <a href="http://www.cplusplus.com/reference/new/operator%20new[]/">operator new[]</a></h4>
+
+<pre class="c"><code class="c">
+// operator new[] example
+#include &lt;iostream&gt;     // std::cout
+#include &lt;new&gt;          // ::operator new[]
+
+struct MyClass {
+  int data;
+  MyClass() {std::cout &lt;&lt; '*';}  // print an asterisk for each construction
+};
+
+int main () {
+  std::cout &lt;&lt; &quot;constructions (1): &quot;;
+  // allocates and constructs five objects:
+  MyClass * p1 = new MyClass[5];
+  std::cout &lt;&lt; '\n';
+
+  std::cout &lt;&lt; &quot;constructions (2): &quot;;
+  // allocates and constructs five objects (nothrow):
+  MyClass * p2 = new (std::nothrow) MyClass[5];
+  std::cout &lt;&lt; '\n';
+
+  std::cout &lt;&lt; &quot;constructions (3): &quot;;
+  // allocates storage for five objects, but does not construct them:
+  MyClass * p3 = static_cast&lt;MyClass*&gt; (::operator new (sizeof(MyClass[5])));
+  std::cout &lt;&lt; '\n';
+
+  std::cout &lt;&lt; &quot;constructions (4): &quot;;
+  // constructs five objects at p3, but does not allocate:
+  new (p3) MyClass[5];
+  std::cout &lt;&lt; '\n';
+
+  delete[] p3;
+  delete[] p2;
+  delete[] p1;
+
+  return 0;
+}
+</code></pre>
+
+<h4 id="output">Output:</h4>
+
+<pre><code>constructions (1): *****
+constructions (2): *****
+constructions (3): 
+constructions (4): *****</code></pre>
+
+<h3 id="delete">二．delete用法:</h3>
+
+<pre class="c"><code class="c">
+ 1. int *a = new int;
+         delete a;   //释放单个int的空间
+ 2.int *a = new int[5];
+        delete [] a; //释放int数组空间
+</code></pre>
+
+<p>要访问new所开辟的结构体空间,无法直接通过变量名进行,只能通过赋值的指针进行访问. 用new和delete可以动态开辟,撤销地址空间.在编程序时,若用完一个变量(一般是暂时存储的数组),下次需要再用,但却又想省去重新初始化的功夫,可以在每次开始使用时开辟一个空间,在用完后撤销它.</p>
+<hr />
+<h3 id="_5">总结</h3>
+
+<ol>
+<li>
+<p>函数new</p>
+
+<p>void *operator new(size_t size); 在堆上分配一块内存，和placement new（void *operator new(size_t, void* buffer)）; 在一块已经存在的内存上创建对象，如果你已经有一块内存，placement new会非常有用，事实上，它STL中有着广泛的使用。</p>
+</li>
+
+<li>
+<p>运算符new 最常用的new，没什么可说的。</p>
+</li>
+
+<li>
+<p>函数new不会自动调用类的构造函数，因为它对分配的内存类型一无所知；而运算符new会自动调用类的构造函数。</p>
+</li>
+
+<li>
+<p>函数new允许重载，而运算符new不能被重载。</p>
+</li>
+</ol>
+	    <br>
+	    <!--This Button BEGIN -->
+	    <div class="jiathis_style">
+		    <span class="jiathis_txt"><b>ShareTo:</b></span>
+		   	<a class="jiathis_button_tsina"></a>
+		       	<a class="jiathis_button_renren"></a>
+			<a class="jiathis_button_weixin"></a>
+			<a class="jiathis_button_douban"></a>
+			<a class="jiathis_button_qzone"></a>
+			<a class="jiathis_button_fb"></a>
+			<a class="jiathis_button_linkedin"></a>
+			<a class="jiathis_button_twitter"></a>
+			<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+			<a class="jiathis_counter_style"></a>
+		</div>
+		<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+		<!-- JiaThis Button END -->	
+	</div>
+	<br/>
+	<br>
+  
+    <ul class="tag_box inline">
+      <li><i class="icon-folder-open"></i></li>
+      
+      
+
+
+  
+     
+    	<li><a href="/categories.html#technology-ref">
+    		technology <span>6</span>
+    	</a></li>
+    
+  
+
+
+    </ul>
+    
+
+  
+    <ul class="tag_box inline">
+      <li><i class="icon-tags"></i></li>
+      
+      
+
+
+  
+     
+    	<li><a href="/tags.html#Technology-ref">Technology <span>5</span></a></li>
+    
+  
+
+
+
+    </ul>
+    
+
+    <hr>
+    <div class="pagination">
+      <ul>
+      
+        <li class="prev"><a href="/thought/2014/01/13/%E5%86%99%E7%BB%99%E8%87%AA%E5%B7%B1%E7%9A%842014%E5%B1%95%E6%9C%9B" title="写给自己的2014展望">&larr; Previous</a></li>
+      
+        <li><a href="/archive.html">Archive</a></li>
+      
+        <li class="next disabled"><a>Next &rarr;</a>
+      
+      </ul>
+    </div>
+    <hr>
+    
+
+
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_developer = 1;
+    var disqus_shortname = 'farmosteast'; // required: replace example with your forum shortname
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+
+  </div>
+</div>
+
+
+      </div>
+      <hr>
+      <footer>
+        <p>&copy; 2014 David
+	| Powered by <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a> | Visitor Statistic Powered by <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1000218212'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s22.cnzz.com/z_stat.php%3Fid%3D1000218212' type='text/javascript'%3E%3C/script%3E"));</script></p> </footer>
+
+    </div>
+    
+  </body>
+</html>
+

@@ -1,7 +1,7 @@
 ---
 layout: post
 category : Technology 
-tagline: "开发大型软件的好帮手"
+tagline: "Linux下开发大型软件的好帮手"
 tags : [Experience, Technology]
 ---
 {% include JB/setup %}
