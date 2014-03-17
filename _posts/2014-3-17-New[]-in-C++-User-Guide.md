@@ -8,7 +8,7 @@ tags : [Technology]
 
 编写面向对象的程序，经常需要使用到new和delete操作为对象申请内存空间并且初始化。在我博客的另一篇文章 [Debug The File System](http://octavianus.github.io/technology/2013/12/25/Debug-the-file-system/) 我提到内存的分配和回收是开发中最令人头疼的事情，一旦出现内存的重叠分配或者访问越界等问题都是很难察觉到的，到时候出现段错误也需要花费大量的时间检查和排除错误。
 
-在C编程中，程序员只需要谨慎仔细的使用malloc和free(虽然这样也不容易)，C++在C的基础上，添加了强大的new功能，不仅可以分配内存，同时还可以为对象初始化，因此，更多的灵活性带来了更多的使用技巧。以我最近做的DBMS term project为例，对于对象内存的分配和回收这一部分而言，使用最频繁的要算是 __Buffer Manager__ (以下简称`BM`)这一层了，这一层主要的功能是在heap file层申请Insert, Update，delete等等各种操作请求时，由于每一项操作设计一个虚拟的Page概念，BM会根据这些操作对应的Page，把其从外部存储设备(disk, flash)中读取到内存池(buffer pool)中，或者从内存池写到外部存储设备上。所以这其中涉及到了大量的内存分配和释放，看似new和delelte能为我们处理一切，可是不同的使用模式效率也会不同。首先有必要了解new的基本使用方法，我认为核心内容是关于placement new.内容转自百度sytarchen的空间和博客园的wanghetao.
+在C编程中，程序员只需要谨慎仔细的使用malloc和free(虽然这样也不容易)，C++在C的基础上，添加了强大的new功能，不仅可以分配内存，同时还可以为对象初始化，因此，更多的灵活性带来了更多的使用技巧。以我最近做的DBMS term project为例，对于对象内存的分配和回收这一部分而言，使用最频繁的要算是 __Buffer Manager__ (以下简称`BM`)这一层了，这一层主要的功能是在heap file层申请Insert, Update，delete等等各种操作请求时，由于每一项操作对应一个或多个虚拟的Page(Page是数据库的存储单位之一)，BM会根据这些操作对应的Page，把其从外部存储设备(disk, flash)中读取到内存池(buffer pool)中，或者从内存池写到外部存储设备上。所以这其中涉及到了大量的内存分配和释放，看似new和delelte能为我们处理一切，可是不同的使用模式效率也会不同。首先有必要了解new的基本使用方法，我认为核心内容是关于placement new.内容转自百度sytarchen的空间和博客园的wanghetao.
 
 --- 
 ###一. New的用法
