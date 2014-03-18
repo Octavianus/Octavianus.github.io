@@ -123,7 +123,7 @@ __6．new运算符__
 
 最常用的是作为运算符的new，比如：
 {% highlight c %}
-string *str = new string(“test new”);
+string *str = new string("test new");
 {% endhighlight %}
 作为运算符，`new和sizeof一样，是C++内置的，你不能对它做任何的改变，除了使用它。`
 new会在堆上分配一块内存，并会自动调用类的构造函数。
@@ -137,12 +137,12 @@ void *operator new(size_t size);
 new函数返回的是一个void指针，一块未经初始化的内存。如你所见，这和C语言的malloc行为相似，你可以重载new函数，并且增加额外的参数，但是必须保证第一个参数必须是size_t类型，它指明了分配内存块的大小，C++允许你这么做，当然一般情况下这是不必要的。如果重载了new函数，在使用new操作符时调用的就是你重载后的new函数了。
 如果使用new函数，和语句
 {% highlight c %}
-string *str = new string(“test new”)
+string *str = new string("test new")
 {% endhighlight %}
 相对的代码大概是如下的样子：
 {% highlight c %}
 string *str = (string*)operator new(sizeof(string));  
-str.string(“test new”);   
+str.string("test new");   
 // 当然这个调用时非法的，但是编译器是没有这个限制的
 {% endhighlight %}
 
