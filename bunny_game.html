@@ -1,0 +1,54 @@
+---
+layout: page
+title: Bunny Game
+header: Bunny Game
+group: navigation
+---
+{% include JB/setup %}
+
+<!doctype html>
+<html>
+	<head>
+		<title> Bunny's Story </title>
+		<meta name="description" content="Bunny's story" />
+		<meta name="keywords" content="bunny" />
+		<meta name="author" content="Xudong Weng" />
+		<link href="./bunny/bunny.css" rel="stylesheet" type="text/css"/>
+		<link rel="shortcut icon" href="images/Rab.ICO" type="image/x-icon">
+		<script type="text/javascript" charset="utf-8" src="./bunny/MDP.js"></script>
+		<script type="text/javascript" charset="utf-8" src="./bunny/MDP_command.js"></script>
+		<script type="text/javascript" charset="utf-8" src="./bunny/map.js"></script>
+		<script type="text/javascript" charset="utf-8" src="./bunny/tip.js"></script>
+		<script type="text/javascript" charset="utf-8" src="./bunny/level.js"></script>
+		<script type="text/javascript" charset="utf-8" src="./bunny/run.js"></script>
+		<script type="text/javascript" charset="utf-8" src="./bunny/command.js"></script>
+		<script type="text/javascript" charset="utf-8" src="./bunny/bunny.js"></script>
+	</head>
+	<body onload="onLoad();">
+		<audio loop id="loop"> 
+			<source src="sound/loop.mp3" preload="auto">
+		</audio>
+		<audio loop id="walk"> 
+			<source src="sound/walk.mp3">
+		</audio>
+		<audio id="cry">
+			<source src="sound/cry.mp3">
+		</audio>
+		<audio id="laugh"> 
+			<source src="sound/laugh.mp3">
+		</audio>
+		<audio id="drop"> 
+			<source src="sound/drop.mp3">
+		</audio>
+		<div id="main">
+			<canvas id="myCanvas"></canvas>
+			<div id="command">
+				<h2>&nbsp;&nbsp&nbsp;&nbsp&nbsp;&nbsp&nbsp;&nbsp&nbsp;&nbspBunny's&nbsp;&nbsp;Story</h2>
+				<textarea id="program" wrap="off"></textarea><br/><br/>
+				<input type="button" name="run" class="button" value="Run" onclick="Command();"/>
+				&nbsp;&nbsp;&nbsp;&nbsp;<img id="mus" src="images/Music.png" onclick="sound();">
+				<input type="button" name="test" class="button" value="Run_MDP" onclick="MDPGrid();"/>
+			</div>
+		</div>
+	</body>
+</html>

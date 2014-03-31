@@ -1,0 +1,53 @@
+body {
+	background-color: rgb(205,215,230);
+}
+
+#main {
+	width: 1000px;
+	margin: 0 auto;
+}
+
+canvas {
+	width: 600px;
+	height: 600px;
+	background-image: url("../images/grass.jpg");
+}/* 程序窗口 */
+
+#command {
+	width: 350px;
+	float: right;
+}/* 命令栏 */
+
+h2 {
+	font-family: verdana;
+	/*font-family:微软雅黑;*/
+	color: white;
+}/* 提示字体显示 */
+
+#program {
+	border: 2px solid #888;
+	width: 350px;
+	height: 400px;
+	padding: 5px;
+	color: #cdf;
+	background: #222;
+	font-size: 18px;
+	font-family: courier;
+	line-height: 22px;
+}/* 主程序窗口 */
+
+.button {
+	width: 150px;
+	height: 35px;
+	float: right;
+	border: 0;
+	font-family:verdana; font-size:18pt; color:white;
+	cursor:pointer;
+	background: rgb(130,130,130);
+}/* 按钮 */
+
+#mus {
+	width: 30px;
+	height: 30px;
+	cursor: pointer;
+}/* 显示音乐 */
