@@ -9,7 +9,6 @@ http://Octavianus.github.io/atom.xml
 http://Octavianus.github.io/rss.xml
 http://Octavianus.github.io/message.html
 http://Octavianus.github.io/categories.html
-http://Octavianus.github.io/a.html
 http://Octavianus.github.io/pages.html
 http://Octavianus.github.io/sitemap.txt
 http://Octavianus.github.io/tags.html
