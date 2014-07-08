@@ -4,7 +4,7 @@
    <head>
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <meta charset="utf-8">
-    <title>为何投身独立博客</title>
+    <title>What A Docker Container Could Do?</title>
     
     <meta name="author" content="David">
 
@@ -156,42 +156,28 @@
       <div class="content">
         
 <div class="page-header">
-  <h1>为何投身独立博客 <small>Why I start to write this blog</small></h1>
+  <h1>What A Docker Container Could Do? <small></small></h1>
 </div>
 
 <div class="row-fluid post-full">
   <div class="span12">
     <div class="date">
-      <span>22 December 2013</span>
+      <span>30 June 2014</span>
     </div>
     <div class="content">
-	    <p><strong>有人说过，博客已死。</strong>这个人的网名叫木遥，是一个多产的个人博主，但是我想木遥指的应该是公共博客，因为私人的博客永远不用担心运营商把他们的博客改造成什么难看的样子，增加什么难用的特性，更不用担心有朝一日他们会像MSN一样被收购，甚至被被迫关闭。另外一点，也是最重要的，每个人都有写作的欲望。私人博客具备更发散的功能，且不从商业价值考虑，就记录自己的故事和想法来说，博客也永远不会消失。</p>
+	    <h2 id="dockerize_applications">Dockerize applications:</h2>
 
-<p>曾经有些日子，我把木遥的博客当饭吃。觉得此人在文笔和思想方面和我相似，但是比我有更加深入和成熟的一套写作机制。我承认十分敬佩此人，他和我在美国工作学习多年的表哥有相仿的年纪，相似的背景，可是我对我表哥的了解，除了他对我的关心和照顾以外，看不到他这么多年经历过的荣辱起伏。但是表哥对我承认过刚到美国来的捉襟见肘，在木要的博客里，看到他当初也如此，似乎距离感小了很多。话说回来，我之所以佩服他，是因为我觉得木遥已经具备了靠博客养活自己的能力了：他写的科技类文章拨乱反正有理有据，叙述类小说逻辑清晰用词考究，社会热点话题也表现出观点独到又不失面面俱到的本领。</p>
+<p>Application and executables To do in the future for docker:</p>
 
-<p>他喜欢将生活中的突发奇想用在写作里，就好比他的小说留学记中说：“现在女生都喜欢刺激，你光对她好没用，你得带着她去干她没干过的事情。她一激动一紧张，就觉得对你有感觉了。” 当时我有一种一拍即合的认同感。再来，他更善于总结并且表达出来，这是最可贵的一点，具体的可以参见他的博客，<a href="http://blog.farmostwood.net/">木遥的窗子</a>.</p>
+<p>Forrester analyst Charlie Dai has noted that as remarkable as Docker is, ”[it] still has a long way to go. It must enable complex enterprise applications in the cloud, much as VMware vApp simplifies the deployment of multitier applications; have more user-friendly graphical user interfaces for easy management; and provide more debugging and tracing features.” One of the potential attractions of CoreOS, then, is how it might offer many of those very features in the form of a Linux stack.</p>
 
-<p>我一直都珍惜别人的认真写作，说的俗一点，写作是思维的结晶，要把所想变成文章，需要大量的原创设计，一份调查表示: 写作对任何人同样的困难，无论学历，年纪和行业。好的写作可以让别人见文如见其人，很快的喜欢上你，也可以让自己变得透明，让读者了解最真实的自己。所以我产生了这样的想法，看牛人的博客如果从学习新知的角度，最好看TA最新的文章，如果想按图索骥摸索方法，最好看TA和你同年龄段时写的文章。所以我不会再看过木遥的博客之后妄自菲薄了，做好应该做的，想好将要做的，循环下去就足够了。</p>
+<p>Provide a mount point to the container file system. docker run -t -i -v /home/vagrant/mp:/home/vagrant/script 6eb7977eea28 python ~/script/test.py</p>
 
-<p>在这样的想法催生下，farmosteast的博客就此诞生了。</p>
-<hr />
-<p><strong>博客的设计方案</strong>，主要来自于几个我在比较熟知的博主：</p>
+<p>Mount point and the interactive feature in the docker container. Also you can expose your container to the network by assigning a port.</p>
 
-<ul>
-<li>年糕 : <a href="http://yanran.li/">Yanran’s Attic</a></li>
-
-<li>阳志平 : <a href="http://www.yangzhiping.com/">阳志平的个人网站</a></li>
-
-<li>木遥 : <a href="http://blog.farmostwood.net/">木遥的窗子</a></li>
-</ul>
-
-<p>他们写作的目的仅仅是为了知识的总结和传播，如果想更好的利用博客实现盈利，应该看看这篇文章。</p>
-
-<blockquote>
-<p><a href="http://www.36kr.com/p/207786.html">不懂代码？创业照样进行</a></p>
-</blockquote>
-
-<p>这篇文章主要介绍的是我们熟知的Wordpress,由于有独立的数据库存储博客数据，在拥有大量的博客数据的情况下，Wordpress有更好的性能，更短的网页构建时间，当然也更稳定。所以大中型商用网站会更倾向于选择Wordpress；同时，Wordpress具有大量的免费和收费插件,例如博客流量分析和访客点击分析等助于博客定位和推广的工具。我采用的ruby开源博客框架jekyll是没有独立数据库的，所有数据存储在github上，每次访问都会生成静态代码，并且由github提供博客的的访问服务。我想自己不会因为写了太多的文章以至于让博客崩溃掉吧，maybe one day</p>
+<p>use json to store the info. work with other technology such as condor and irods.</p>
+<div class='highlight'><pre><code class='c'>
+</code></pre></div>
 	    <br>
 	    <!--This Button BEGIN -->
 	    <div class="jiathis_style">
@@ -221,8 +207,8 @@
 
   
      
-    	<li><a href="/categories.html#thought-ref">
-    		thought <span>3</span>
+    	<li><a href="/categories.html#technology-ref">
+    		technology <span>7</span>
     	</a></li>
     
   
@@ -240,9 +226,7 @@
 
   
      
-    	<li><a href="/tags.html#Thought-ref">Thought <span>3</span></a></li>
-     
-    	<li><a href="/tags.html#Beginner-ref">Beginner <span>3</span></a></li>
+    	<li><a href="/tags.html#Technology-ref">Technology <span>6</span></a></li>
     
   
 
@@ -255,11 +239,11 @@
     <div class="pagination">
       <ul>
       
-        <li class="prev"><a href="/technology/2013/12/21/How-To" title="How To">&larr; Previous</a></li>
+        <li class="prev"><a href="/technology/2014/03/17/New%5B%5D-in-C%2B%2B-User-Guide" title="New[] In C++ User Guide">&larr; Previous</a></li>
       
         <li><a href="/archive.html">Archive</a></li>
       
-        <li class="next"><a href="/technology/2013/12/24/Connect-LG-HBS-730-to-Laptop" title="Connect Lg Hbs 730 To Laptop">Next &rarr;</a></li>
+        <li class="next"><a href="/thought/2014/07/07/%E5%85%A5%E8%81%8C%E8%AE%B0" title="入职记">Next &rarr;</a></li>
       
       </ul>
     </div>
