@@ -4,7 +4,7 @@
  <title>farmosteast</title>
  <link href="http://Octavianus.github.io/" rel="self"/>
  <link href="http://Octavianus.github.io"/>
- <updated>2014-07-17T19:36:54-07:00</updated>
+ <updated>2014-07-17T19:40:10-07:00</updated>
  <id>http://Octavianus.github.io</id>
  <author>
    <name>David</name>
@@ -27,10 +27,10 @@
  </entry>
  
  <entry>
-   <title>What A Docker Container Could Do?</title>
-   <link href="http://Octavianus.github.io/technology/2014/06/30/What-a-Docker-container-could-do%3F"/>
+   <title>What A Docker Container Could Do</title>
+   <link href="http://Octavianus.github.io/technology/2014/06/30/What-a-Docker-container-could-do"/>
    <updated>2014-06-30T00:00:00-07:00</updated>
-   <id>http://Octavianus.github.io/technology/2014/06/30/What-a-Docker-container-could-do?</id>
+   <id>http://Octavianus.github.io/technology/2014/06/30/What-a-Docker-container-could-do</id>
    <content type="html">&lt;h2 id=&quot;dockerize_applications&quot;&gt;Dockerize applications:&lt;/h2&gt;
 
 &lt;p&gt;&lt;strong&gt;To do in the future for docker:&lt;/strong&gt;&lt;/p&gt;

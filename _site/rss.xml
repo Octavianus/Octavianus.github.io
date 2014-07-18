@@ -5,8 +5,8 @@
         <description>farmosteast - David</description>
         <link>http://Octavianus.github.io</link>
         <link>http://Octavianus.github.io</link>
-        <lastBuildDate>2014-07-17T19:36:54-07:00</lastBuildDate>
-        <pubDate>2014-07-17T19:36:54-07:00</pubDate>
+        <lastBuildDate>2014-07-17T19:40:10-07:00</lastBuildDate>
+        <pubDate>2014-07-17T19:40:10-07:00</pubDate>
         <ttl>1800</ttl>
 
 
@@ -25,7 +25,7 @@
         </item>
 
         <item>
-                <title>What A Docker Container Could Do?</title>
+                <title>What A Docker Container Could Do</title>
                 <description>&lt;h2 id=&quot;dockerize_applications&quot;&gt;Dockerize applications:&lt;/h2&gt;
 
 &lt;p&gt;&lt;strong&gt;To do in the future for docker:&lt;/strong&gt;&lt;/p&gt;
@@ -37,8 +37,8 @@
 &lt;p&gt;Mount point and the interactive feature in the docker container. Also you can expose your container to the network by assigning a port. Use json to store the info. Figure about how to work with other open source technology such as condor and irods.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;About the duplication of resources:&lt;/strong&gt; There is some duplication of resources across containers, but the benefits see,m to outweigh the overlapping resource usage, duplication also allows us to haveapplications with conflicting dependencies running on the same box, and even allow them to work on the same dataset.&lt;/p&gt;</description>
-                <link>http://Octavianus.github.io/technology/2014/06/30/What-a-Docker-container-could-do%3F</link>
-                <guid>http://Octavianus.github.io/technology/2014/06/30/What-a-Docker-container-could-do?</guid>
+                <link>http://Octavianus.github.io/technology/2014/06/30/What-a-Docker-container-could-do</link>
+                <guid>http://Octavianus.github.io/technology/2014/06/30/What-a-Docker-container-could-do</guid>
                 <pubDate>2014-06-30T00:00:00-07:00</pubDate>
         </item>
 
